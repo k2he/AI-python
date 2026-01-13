@@ -1,0 +1,14 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyCharm settings
+.idea/
+
+# Environment variables (Critical for security!)
+.env
+
+# Virtual Environment
+.venv/
+env/
