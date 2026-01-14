@@ -5,6 +5,7 @@ from app.config.logging_config import get_logger
 
 logger = get_logger(__name__)
 
+
 def setup_langsmith_tracing():
     os.environ["LANGSMITH_TRACING"] = str(settings.langsmith_tracing).lower()
     os.environ["LANGSMITH_API_KEY"] = settings.langsmith_api_key

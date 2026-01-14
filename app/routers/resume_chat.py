@@ -15,15 +15,20 @@ async def send_resume_chat(request: ResumeChatRequest):
     logger.info(f"Incoming resume chat request from user: {request.user_id}")
     try:
         # Integrate with your AI model to get a response
-        response_text = await ResumeLLMService.get_response(user_query=request.question)
+        response = await ResumeLLMService.get_response(user_query=request.question)
 
         # Save the chat message and response to the database
         await ChatRepository.save_chat_message(
-            request.user_id, request.question, response_text
+            request.user_id, request.question, response.response_text
         )
 
         logger.info(f"Response sent to user {request.user_id}")
-        return ResumeChatResponse(answer=response_text)
+        return ResumeChatResponse(
+            answer=response.response_text,
+            email=response.contact_email,
+            phone=response.contact_phone,
+            city=response.contact_city,
+        )
     except Exception as e:
         logger.error(f"Error processing resume chat for user {request.user_id}: {e}")
         raise HTTPException(

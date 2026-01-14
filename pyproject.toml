@@ -9,6 +9,7 @@ dependencies = [
     "langchain>=1.2.3",
     "langchain-ollama>=1.0.1",
     "langchain-openai>=1.1.7",
+    "langchain-tavily>=0.2.16",
     "langsmith>=0.6.2",
     "motor>=3.7.1",
     "pydantic>=2.12.5",

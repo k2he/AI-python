@@ -3,8 +3,8 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from app.config.config import settings
-from app.config.logging_config import get_logger, setup_logging
 from app.config.langsmith_config import setup_langsmith_tracing
+from app.config.logging_config import get_logger, setup_logging
 from app.db.database import db_manager
 from app.routers import resume_chat
 
