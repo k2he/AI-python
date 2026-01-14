@@ -1,5 +1,7 @@
-from PyPDF2 import PdfReader
 from pathlib import Path
+
+from PyPDF2 import PdfReader
+
 
 def read_pdf(filename) -> str:
     """
@@ -28,6 +30,7 @@ def read_pdf(filename) -> str:
     except Exception as e:
         return f"Error reading PDF: {str(e)}"
 
+
 def read_text_file(filename) -> str:
     """
     Finds the text file relative to this file's location and reads its content.
@@ -41,7 +44,9 @@ def read_text_file(filename) -> str:
 
     # 3. Safety Check: Does the file actually exist?
     if not text_file_path.exists():
-        raise FileNotFoundError(f"Could not find text file at: {text_file_path.absolute()}")
+        raise FileNotFoundError(
+            f"Could not find text file at: {text_file_path.absolute()}"
+        )
 
     # 4. Read Content
     try:
