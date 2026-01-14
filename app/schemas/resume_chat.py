@@ -25,6 +25,3 @@ class ResumeLLMResponse(BaseModel):
     contact_city: str = Field(
         ..., description="The city most worked in provided in the response."
     )
-    # current_weather: str = Field(
-    #     ..., description="Current weather in the contact city"
-    # )

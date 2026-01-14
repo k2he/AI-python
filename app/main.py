@@ -6,7 +6,7 @@ from app.config.config import settings
 from app.config.langsmith_config import setup_langsmith_tracing
 from app.config.logging_config import get_logger, setup_logging
 from app.db.database import db_manager
-from app.routers import resume_chat
+from app.routers import internet_search, resume_chat
 
 logger = get_logger(__name__)
 
@@ -37,7 +37,10 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="Resume AI Analytics API", version="1.0.0", lifespan=lifespan)
 
 # Register Routers
-app.include_router(resume_chat.router, prefix="/ai-demo", tags=["Resume Chat"])
+app.include_router(resume_chat.router, prefix="/ai-demo/v1", tags=["Resume Chat"])
+app.include_router(
+    internet_search.router, prefix="/ai-demo/v1", tags=["Internet Search"]
+)
 
 if __name__ == "__main__":
     import uvicorn
