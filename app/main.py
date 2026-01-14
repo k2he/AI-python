@@ -4,6 +4,7 @@ from fastapi import FastAPI
 
 from app.config.config import settings
 from app.config.logging_config import get_logger, setup_logging
+from app.config.langsmith_config import setup_langsmith_tracing
 from app.db.database import db_manager
 from app.routers import resume_chat
 
@@ -14,6 +15,7 @@ logger = get_logger(__name__)
 async def lifespan(app: FastAPI):
     # 1. Setup Logging
     setup_logging()
+    setup_langsmith_tracing()
     logger.info("Starting AI-python enterprise application...")
 
     # 2. Connect to MongoDB (reads DATABASE_URL from .env)

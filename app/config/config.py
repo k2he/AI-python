@@ -1,3 +1,5 @@
+from typing import Optional
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -9,6 +11,10 @@ class Settings(BaseSettings):
 
     llm_model: str
     llm_provider: str
+
+    langsmith_tracing: bool = True
+    langsmith_api_key: str
+    langsmith_project: str = "default"
 
     # Tell Pydantic to look for a .env file
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
