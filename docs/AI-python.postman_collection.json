@@ -13,7 +13,37 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"user_id\": \"user123\",\n    \"question\": \"Can you analyze my resume and tell me if I am a good fit for a Senior Python Developer role?\"\n}",
+					"raw": "{\n    \"user_id\": \"user123\",\n    \"question\": \"Is Kai a good fit for a Senior Java Developer role?\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/ai-demo/resume-chat/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"ai-demo",
+						"resume-chat",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resume-chat Q2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"user123\",\n    \"question\": \"Which company kai worked on longest?\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"

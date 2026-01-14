@@ -7,6 +7,9 @@ class Settings(BaseSettings):
     database_url: str
     resume_chat_collection: str
 
+    llm_model: str
+    llm_provider: str
+
     # Tell Pydantic to look for a .env file
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 

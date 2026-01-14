@@ -7,5 +7,4 @@ class ResumeChatRequest(BaseModel):
 
 
 class ResumeChatResponse(BaseModel):
-    answer: str = Field(..., description="The answer provided by the system.")
-    status: str
+    answer: str
